@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>Admin Panel - Ecommerce</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <style type="text/css">
+    /* Custom CSS for the three sections in the navigation bar */
+    .navbar-nav .nav-item {
+      margin-right: 15px; /* Adjust the spacing between the sections */
+    }
+
+    .navbar-nav .nav-item:last-child {
+      margin-right: 0; /* Remove right margin from the last section */  
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 18px; /* Adjust the font size */
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #fff; /* Change the text color on hover */
+      background-color: #0b3669; /* Change the background color on hover */
+      border-radius: 0px; /* Add some border-radius to create a button-like effect on hover */
+    }
+
+
+    .bs-example {
+      justify-content: center;
+      text-align: center;
+
+    }
+
+    .navbar-brand {
+      font-size: 20px;
+      font-family: sans-serif;
+
+    }
+    .btn{
+      color: #041562;
+      background-color: white;
+      padding: 10px;
+      
+    }
+  
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background:#071952; border-radius: 0;">
+      
+      <a href="/" class="navbar-brand">Admin Panel</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+  
+        <div class="navbar-nav navbar-right">
+          <a href="/logout" class="nav-item nav-link"><button class="btn">Logout</button></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+
+  <div class="bs-example" style="padding-top: 0px;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background: #071952; border-radius: 0; ">
+  
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="d-flex justify-content-center"> <!-- This div centers the three sections -->
+          <div class="navbar-nav">
+            <a href="/view-customer" class="nav-item nav-link" style="color: white;">Customer</a>
+            <a href="/admin-view-booking" class="nav-item nav-link" style="color: white;">View Orders</a>
+            <a href="/admin-products" class="nav-item nav-link" style="color: white;">Manage Products</a>
+            <!-- <a href="/view-feedback" class="nav-item nav-link" style="color: white;">Feedback</a> -->
+          </div>
+        </div>
+  
+      </div>
+    </nav>
+  </div>
+  
+
+  <!-- content start-->
+  {% block content %}
+
+  {% endblock content %}
+  <!-- content end-->
+
+</body>
+</html>

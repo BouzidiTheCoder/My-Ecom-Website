@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>LuxuriaPalais</title>
+  <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
+</head>
+
+<body>
+
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+  
+  
+
+    <br><br>
+    <br>
+   <!--
+      - TESTIMONIALS, CTA & SERVICE
+    -->
+
+    <div>
+
+      <div class="container">
+
+        <div class="testimonials-box">
+
+          <!--
+            - TESTIMONIALS
+          -->
+
+          <div class="testimonial">
+
+            <h2 class="title">CEO</h2>
+
+            <div class="testimonial-card">
+
+              <img src="{% static 'images/about.png' %}" alt="alan doe" class="testimonial-banner" width="80" height="80">
+
+              <p class="testimonial-name">Mohamed Bouzidi</p>
+
+              <p class="testimonial-title">Future Engineer</p>
+
+              <img src="{% static 'images/icons/quote.png' %}" alt="quotation" class="quotation-img" width="26">
+
+              <p class="testimonial-desc">
+                <br>
+                I have been honored to lead this extraordinary company to new heights.
+                <br><br><br>
+              
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <!--
+            - CTA
+          -->
+
+          <div class="cta-container">
+
+            <img src="{% static 'images/aboutus.png' %}" alt="summer collection" class="cta-banner">
+
+            <a href="#" class="cta-content" style="background: white;">
+
+
+              <p class="discount" style="margin-bottom: 20px;">MyWear</p>
+
+              <h2 class="cta-title" style="width: 500px;">Where luxury finds its true meaning. </h2>
+
+
+            </a>
+
+          </div>
+
+
+
+          <!--
+            - SERVICE
+          -->
+
+          <div class="service">
+
+            <h2 class="title">Our Services</h2>
+          
+            <div class="service-container">
+          
+              <a href="#" class="service-item">
+          
+                <div class="service-icon">
+                  <ion-icon name="boat-outline"></ion-icon>
+                </div>
+          
+                <div class="service-content">
+          
+                  <h3 class="service-title">Worldwide Delivery</h3>
+                  <p class="service-desc">For Orders Over 1200 Dh</p>
+          
+                </div>
+          
+              </a>
+          
+              <a href="#" class="service-item">
+          
+                <div class="service-icon">
+                  <ion-icon name="rocket-outline"></ion-icon>
+                </div>
+          
+                <div class="service-content">
+          
+                  <h3 class="service-title">Next-Day Delivery</h3>
+                  <p class="service-desc">Only for Orders in Casablanca</p>
+          
+                </div>
+          
+              </a>
+          
+              <a href="#" class="service-item">
+          
+                <div class="service-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+          
+                <div class="service-content">
+          
+                  <h3 class="service-title">Best Online Support</h3>
+                  <p class="service-desc">Hours: 9 AM to 10 PM</p>
+          
+                </div>
+          
+              </a>
+          
+              <a href="#" class="service-item">
+          
+                <div class="service-icon">
+                  <ion-icon name="arrow-undo-outline"></ion-icon>
+                </div>
+          
+                <div class="service-content">
+          
+                  <h3 class="service-title">Return Policy</h3>
+                  <p class="service-desc">Easy and Free Returns</p>
+          
+                </div>
+          
+              </a>
+          
+              <a href="#" class="service-item">
+          
+                <div class="service-icon">
+                  <ion-icon name="ticket-outline"></ion-icon>
+                </div>
+          
+                <div class="service-content">
+          
+                  <h3 class="service-title">30% Refund</h3>
+                  <p class="service-desc">For Orders Over 1150 DH</p>
+          
+                </div>
+          
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  
+
+{% include "ecom/footer.html" %}
+
+
+</body>
+
+</html>

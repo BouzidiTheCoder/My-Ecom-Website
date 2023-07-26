@@ -1,0 +1,85 @@
+a {
+  text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+.user_card {
+    width: 500px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0px;
+  
+  }
+  
+  .form_container {
+    margin-top: 60px;
+  }
+  
+  #form-title{
+    color: black;
+    padding-top: 50px;
+  }
+  
+  .login_btn {
+    width: 100%;
+    background: hsl(0, 0%, 13%) !important;
+    color: white !important;
+    margin-top: 50px;
+    margin-bottom: 0px;
+  }
+  .login_btn:hover{
+    border: solid 1px hsl(0, 0%, 13%);
+    background-color: transparent !important;
+    color: hsl(0, 0%, 13%) !important;
+  }
+  
+  .login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+  }
+  .login_container {
+    padding: 0 2rem;
+  }
+  .input-group-text {
+    background: hsl(0, 0%, 13%) !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+  .input_user,
+  .input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+  }
+  .login{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .signup_btn {
+    width: 100%;
+    background: hsl(0, 0%, 13%) !important;
+    color: white !important;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  .signup_btn:hover{
+    background-color: white !important;
+    color: hsl(0, 0%, 13%) !important;
+    border: 1px solid hsl(0, 0%, 13%);
+  }
+  
+  .signup_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+  }

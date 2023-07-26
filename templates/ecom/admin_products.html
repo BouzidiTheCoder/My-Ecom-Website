@@ -1,0 +1,90 @@
+{% extends 'ecom/admin_base.html' %}
+{% load static %}
+{% block content %}
+
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+
+    .float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:60px;
+	right:60px;
+	background-color:#3CCF4E;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+}
+.float:hover{
+	background-color:transparent;
+	color: #3CCF4E;
+  border: 1px solid #3CCF4E;
+}
+
+.my-float{
+	margin-top: 23px;
+}
+  </style>
+</head>
+
+
+<div class="container">
+  <div class="panel panel-danger">
+    <div class="panel-heading" style="background-color: #071952; color: white;">
+      <h6 class="panel-title">Total Products</h6>
+    </div>
+    <table class="table table-hover table-bordered" id="dev-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      {% for p in products %}
+  {% if p %}
+
+      <tr>
+        <td style="text-align: center;"> {{p.name}}</td>
+        <td style="text-align: center;"> <img src="{% static p.product_image.url %}" alt="Profile Pic" height="auto" width="auto" style="max-width: 40px;" /></td>
+        <td style="text-align: center;">{{p.price}}</td>
+        <td style="text-align: center;">{{p.description}}</td>
+        <td style="text-align: center;">
+          <a class="btn btn-primary btn-xs" href="{% url 'update-product' p.id  %}" style="background-color: #11468F;"><span class="glyphicon glyphicon-edit"></span></a>
+          <a class="btn btn-danger btn-xs" href="{% url 'delete-product' p.id  %}" style="background-color: #DA1212;"><span class="glyphicon glyphicon-trash"></span></a>
+        </td>
+
+      </tr>
+      {%else%}
+      <br><br><br>
+      <h1>No Products!!</h1>
+      {% endif %}
+      {% endfor %}
+    </table>
+  </div>
+</div>
+<!-- add product floating button -->
+<a href="/admin-add-product" class="float">
+<i class="fa fa-plus my-float"></i>
+</a>
+
+{% endblock content %}

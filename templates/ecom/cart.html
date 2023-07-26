@@ -1,0 +1,159 @@
+{% extends 'ecom/customer_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuxuriaPalais</title>
+  <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"rel="stylesheet">
+
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'css/cart_style.css' %}">
+
+</head>
+
+
+
+<body>
+      
+  <main>
+    
+ <header id="site-header">
+     <div class="container">
+        <h1>Charrette</h1>
+     </div>
+   </header>
+
+{% for p in products %}
+      <div class="container" >
+        <section id="cart"> 
+                <article class="product" >
+                  <header class="im">
+                    <a class="remove">
+                      <img src="{% static p.product_image.url %}" alt="Product Pic">
+          
+                      <a class="btn-danger btn-xs" href="{% url 'remove-from-cart' p.id  %}" style="text-align: center;"><h3>Supprimer le produit</h3></a>
+                      
+                    </a>
+                  </header>
+          
+                  <div class="content" >
+          
+                    <h1>{{p.name}}</h1>
+          
+                    {{p.description}}
+
+                    <div title="You have selected this product to be shipped in the color yellow." style="top: 0" class="color yellow"></div>
+                    <div style="top: 43px" class="type small">Blanc</div>
+                  </div>
+          
+                  <footer class="content">
+                    
+                    <h2 class="full-price">
+                      ${{p.price}}
+                    </h2>
+          
+                    <h2 class="price">
+                      14.99$
+                    </h2>
+                  </footer>
+                </article>
+              </section>
+      </div>
+{% endfor %}
+ 
+   <footer id="site-footer">
+     <div class="container clearfix">
+ 
+       <div class="left">
+         <h2 class="subtotal">Sous-total: <span>{{total}}</span>$</h2>
+         <h3 class="tax">Taxes (5%): <span>8.2</span>$</h3>
+         <h3 class="shipping">Livraison: <span>5.00</span>$</h3>
+       </div>
+ 
+       <div class="right">
+         <h1 class="total">Total: <span>{{total}}</span>$</h1>
+         <a href="/customer-address"><button class="btn btn-success btn-lg" ><span>Purchase </span></button></a>
+
+       </div>
+ 
+     </div>
+   </footer>
+  </main>
+  
+       
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+   
+  </body>
+
+</html>
+
+
+
+{% endblock content %}
+
+<!--
+<br><br><br><br>
+
+<div class="container">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h6 style="text-align:center;" class="panel-title">My Cart</h6>
+    </div>
+    <table class="table table-hover table-bordered" id="dev-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Action</th>
+
+        </tr>
+      </thead>
+      {% for p in products %}
+  {% if p %}
+
+      <tr>
+        <td> {{p.name}}</td>
+        <td> <img src="{% static p.product_image.url %}" alt="Profile Pic" height="50px" width="50px" /></td>
+        <td>$ {{p.price}}</td>
+        <td>{{p.description}}</td>
+
+        <td><a class="btn btn-danger btn-xs" href="{% url 'remove-from-cart' p.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
+
+      </tr>
+      {%else%}
+      <br><br><br>
+      <h1>no products</h1>
+      {% endif %}
+      {% endfor %}
+    </table>
+  </div>
+</div>
+<br><br><br>
+<div style="text-align: center;">
+  <button class="btn btn-danger btn-lg">Total ${{total}}</button>
+  <a href="/customer-address"><button class="btn btn-success btn-lg" ><span>Purchase </span></button></a>
+</div>
+
+-->
+

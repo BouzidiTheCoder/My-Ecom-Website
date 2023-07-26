@@ -1,0 +1,50 @@
+
+  a:link {
+    text-decoration: none;
+  }
+
+  .note {
+    text-align: center;
+    height: 80px;
+    background: -webkit-linear-gradient(left, black, black);
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+    
+  }
+
+  .form-content {
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
+    
+  }
+
+  .form-control {
+    border-radius: 0rem;
+    margin-bottom: 15px;
+    text-align: center;
+    height: 40px;
+  }
+
+  .btnSubmit {
+    border: none;
+    border-radius: 0rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: black;
+    color: #fff;
+    justify-content: center;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .btnSubmit:hover {
+    border: solid 1px black;
+    background-color: transparent;
+    color: black;
+  }
+
+  .menu{
+    top: 20px;
+  }
